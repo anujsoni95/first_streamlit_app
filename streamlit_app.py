@@ -15,6 +15,12 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 fruits_selected = streamlit.multiselect("Pick from fruits : ", list(my_fruit_list.index),['Avocado','Strawberries'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
+
+def insert_row_snowflake(new_fruit): 
+           with my_cnx.cursor() as my_cur: 
+                my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values ('"+ papaya + "')")
+                return "Thanks for adding" + new_fruit
+           
 # Display the list on the page 
 def get_fruityvice_data(this_fruit_choice): 
            fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)     
@@ -22,10 +28,7 @@ def get_fruityvice_data(this_fruit_choice):
            return fruityvice_normalized
 streamlit.header('fruityvice fruit advice!')
 
-def insert_row_snowflake(new_fruit): 
-           with my_cnx.cursor() as my_cur: 
-                my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values ('"+ papaya + "')")
-                return "Thanks for adding" + new_fruit
+
 
 
 try: 
