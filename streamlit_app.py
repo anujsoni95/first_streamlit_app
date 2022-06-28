@@ -15,7 +15,6 @@ fruits_selected = streamlit.multiselect("Pick from fruits : ", list(my_fruit_lis
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the list on the page 
 #streamlit.dataframe(fruits_to_show)fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
-streamlit.dataframe(fruits_to_show).fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
 streamlit.header('fruityvice fruit advice!')
