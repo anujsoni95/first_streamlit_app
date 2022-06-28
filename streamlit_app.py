@@ -26,7 +26,7 @@ try:
        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)     
        fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
        streamlit.dataframe(fruityvice_normalized)
-        streamlit.write('The user entered ', fruit_choice)
+       streamlit.write('The user entered ', fruit_choice)
 except URLError as e
     streamlit.error()
 
