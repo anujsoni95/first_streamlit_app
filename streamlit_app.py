@@ -18,7 +18,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 def insert_row_snowflake(new_fruit): 
            with my_cnx.cursor() as my_cur: 
-                my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values ('"+ papaya + "')")
+                my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values ('" + papaya + "')")
                 return "Thanks for adding" + new_fruit
            
 # Display the list on the page 
